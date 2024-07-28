@@ -31,7 +31,7 @@ public class BankManagementController {
     @PutMapping("/update/{id}")
     public ApiResponse updateBankManagement(@PathVariable String id, @RequestBody BankManagement bankManagement){
         for(BankManagement customer: bankManagements){
-            if(customer.getId().equalsIgnoreCase(bankManagement.getId())){
+            if(customer.getId().equalsIgnoreCase(id)){
                 customer.setUsername(bankManagement.getUsername());
                 customer.setBalance(bankManagement.getBalance());
                 return new ApiResponse("Successfully updated");
